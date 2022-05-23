@@ -27,10 +27,10 @@ const Navbar = () => {
             class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black rounded-box w-52"
           >
             <li>
-            <Link to={'/login'} className="font-semibold text-neutral">Log in</Link>
+            <Link to={'/login'} className="font-semibold text-success">Log in</Link>
           </li>
           <li>
-            <Link to={'/signup'} className="font-semibold text-neutral">Sign Up</Link>
+            <Link to={'/signup'} className="font-semibold text-success">Sign Up</Link>
           </li>
           </ul>
         </div>
@@ -39,10 +39,10 @@ const Navbar = () => {
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal p-0">
           <li>
-            <Link to={'/login'} className="font-semibold text-neutral ">Log in</Link>
+            <Link to={'/login'} className="font-semibold text-success ">Log in</Link>
           </li>
           <li>
-            <Link to={'/signup'} className="font-semibold text-neutral">Sign Up</Link>
+            <Link to={'/signup'} className="font-semibold text-success">Sign Up</Link>
           </li>
         </ul>
       </div>

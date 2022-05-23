@@ -1,7 +1,5 @@
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {},
   },
@@ -9,16 +7,25 @@ module.exports = {
     themes: [
       {
         mytheme: {
-          primary: "#16003B",
-          secondary: "#F73D93",
-          accent: "#413F42",
-          neutral: "#F2F2F2",
-          "base-100": "#ffffff",
+          primary: "#1C4F82",
+
+          secondary: "#7D919B",
+
+          accent: "#EB6B47",
+
+          neutral: "#23282F",
+
+
+          info: "#0092D6",
+
+          success: "#6CB288",
+
+          warning: "#DAAD58",
+
+          error: "#AB3D30",
         },
       },
-      "dark",
-      "cupcake",
     ],
   },
   plugins: [require("daisyui")],
-}
+};
