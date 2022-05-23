@@ -5,6 +5,8 @@ import auth from "../../firebase.init";
 import Loading from "../shared/Loading";
 import useToken from "../../hooks/useToken";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 
 const Login = () => {
@@ -45,17 +47,21 @@ const Login = () => {
   };
 
   const passReset = async () => {
-    const email = emailRef.current.value;
-    console.log(email);
-    await sendPasswordResetEmail(email);
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Password reset email send',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 
 
   return (
     <div className="flex justify-center item-center mt-20">
-      <div class="card w-96 shadow-lg shadow-cyan-500/50">
-        <div class="card-body">
-          <h2 class="text-secondary text-center font-bold text-2xl">Log in</h2>
+      <div className="card w-96 shadow-lg shadow-cyan-500/50">
+        <div className="card-body">
+          <h2 className="text-secondary text-center font-bold text-2xl">Log in</h2>
 
           <form onSubmit={handleSubmit(handleform)}>
             <div className="form-control w-full max-w-xs">
@@ -114,7 +120,7 @@ const Login = () => {
             <p className='text-secondary font-bold my-2 text-base cursor-pointer' onClick={passReset}>Forgate password</p>
             <input type="submit" value="Log in" className="btn w-full max-w-xs text-secondary font-bold" />
           </form>
-          <div class="divider text-secondary">OR</div>
+          <div className="divider text-secondary">OR</div>
           <button className="btn w-full max-w-xs text-secondary font-bold" onClick={()=>signInWithGoogle()}>
             Google
           </button>
