@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import {AiOutlineRight} from 'react-icons/ai';
 
 const Dashboard = () => {
@@ -8,6 +8,7 @@ const Dashboard = () => {
   <input id="dashboard-drawer" type="checkbox" class="drawer-toggle" />
   <div class="drawer-content">
     <label for="dashboard-drawer" class="text-black font-bold mt-10"><span className='border-2 border-indigo-600 rounded-r-lg p-2 mt-10 text-2xl'>&gt;</span> </label>
+    <Outlet></Outlet>
   </div> 
   <div class="drawer-side">
     <label for="dashboard-drawer" class="drawer-overlay"></label>
