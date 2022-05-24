@@ -44,6 +44,9 @@ const Navbar = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal p-0">
           <li>
+            {user && <Link to={'/dashboard'} className="font-semibold text-success ">Dashborad</Link>}
+          </li>
+          <li>
             {!user && <Link to={'/login'} className="font-semibold text-success ">Log in</Link>}
           </li>
           <li>
