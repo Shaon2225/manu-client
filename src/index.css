@@ -14,4 +14,7 @@ code {
     monospace;
 }
 
-
+.banner-bg{
+  background-image: url('../public/img/banner.jpg');
+  background-size: cover ;
+}
