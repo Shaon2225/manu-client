@@ -9,6 +9,8 @@ import Dashboard from './component/Dashboard/Dashboard';
 import UserProfile from './component/Dashboard/UserProfile';
 import RequireAuth from './component/shared/RequireAuth';
 import MyReview from './component/Dashboard/MyReview';
+import MyOrders from './component/Dashboard/MyOrders';
+import Allusers from './component/Dashboard/Allusers';
 
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
         <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<UserProfile></UserProfile>}></Route>
           <Route path='myreview' element={<MyReview></MyReview>}></Route>
+          <Route path='myorders' element={<MyOrders></MyOrders>}></Route>
+          <Route path='allusers' element={<Allusers></Allusers>}></Route>
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>

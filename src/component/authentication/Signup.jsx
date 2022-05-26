@@ -25,7 +25,7 @@ const Signup = () => {
 
   if(gError|| eError || updateError){
     signInError = eError?.message||gError?.message||updateError?.message;
-    signInError=signInError.split(' ')[2].split('/')[1].split(')')[0].split('-').join(' ');
+    signInError=signInError?.split(' ')[2]?.split('/')[1]?.split(')')[0]?.split('-')?.join(' ');
   }
   const [token] = useToken(user||gUser);
   if(token){

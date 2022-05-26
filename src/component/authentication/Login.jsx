@@ -116,7 +116,7 @@ const Login = () => {
               </label>
             </div>
             <p className="mb-3"><small className="text-secondary font-bold">{signInError}</small></p>
-            <p className='text-secondary font-medium my-2 text-base	'>New to VoltLab <Link to={'/login'} className="font-bold">Sign up</Link> now</p>
+            <p className='text-secondary font-medium my-2 text-base	'>New to VoltLab <Link to={'/signup'} className="font-bold">Sign up</Link> now</p>
             <p className='text-secondary font-bold my-2 text-base cursor-pointer' onClick={passReset}>Forgate password</p>
             <input type="submit" value="Log in" className="btn w-full max-w-xs text-secondary font-bold" />
           </form>

@@ -15,8 +15,9 @@ const UserProfile = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+  
   const userUrl = `http://localhost:5000/userprofile/${user.email}`;
-  console.log(userUrl)
+  
   const {
     data: userProfile,
     isLoading,
@@ -33,6 +34,7 @@ const UserProfile = () => {
   const handleUpdate = (data) => {
     const profile = {
       email: user.email,
+      name: user.displayName,
       education: data.education,
       social: data.social,
       phoneNumber: data.phoneNumber,
@@ -166,8 +168,8 @@ const UserProfile = () => {
         </div>
       ) : (
         <div class="avatar placeholder">
-          <div class="bg-neutral-focus text-neutral-content rounded-full w-24">
-            <span class="text-3xl">{user.displayName.split("")[0]}</span>
+          <div class="bg-primary-focus text-accent-content rounded-full w-24 h-24">
+            <span class="text-3xl">{user?.displayName?.split("")[0].toUpperCase()}</span>
           </div>
         </div>
       )}
