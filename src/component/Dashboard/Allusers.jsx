@@ -77,11 +77,12 @@ const Allusers = () => {
   };
 
   return (
-    <div class="overflow-x-auto">
+   <div>
       <h1 className="text-accent text-lg font-bold text-center my-5">
         {" "}
         Total number of user : {users?.length}
       </h1>
+        <div class="overflow-x-auto">
       <table class="table w-3/4 flex justify-center items-center mx-auto">
         <thead>
           <tr>
@@ -122,6 +123,7 @@ const Allusers = () => {
         </tbody>
       </table>
     </div>
+   </div>
   );
 };
 

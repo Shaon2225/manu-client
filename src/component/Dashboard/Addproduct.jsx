@@ -1,5 +1,7 @@
 import React from 'react'
 import { useForm } from 'react-hook-form';
+import Swal from 'sweetalert2';
+
 
 const Addproduct = () => {
     const {
@@ -8,12 +10,55 @@ const Addproduct = () => {
         handleSubmit,
       } = useForm();
 
+const imgStorageKey = "4caaf9248faf2969afb13348081b5dc7";
+
       const addProduct = data =>{
-        console.log(data);
+        const img = data.productImg[0];
+        const formData =new FormData();
+        formData.append('image',img);
+        const url = `https://api.imgbb.com/1/upload?key=${imgStorageKey}`;
+        fetch(url,{
+            method:"POST",
+            body: formData
+        })
+        .then(res=> res.json())
+        .then(result=>{
+            if(result.success){
+                const img = result.data.url;
+                const product ={
+                    productName : data.productName,
+                    productDetails: data.productDetails,
+                    productPrice: data.productPrice,
+                    productQuantity: data.productQuantity,
+                    minOrderQuantity: data.minOrderQuantity,
+                    productImg: img,
+                }
+                fetch('http://localhost:5000/addproduct',
+                {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json',
+                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                    },
+                    body: JSON.stringify(product)
+                }
+                )
+                .then(res=> res.json())
+                .then(x => {
+                    if(x?.acknowledged){
+                        Swal.fire(
+                            'Good job!',
+                            'Product has been added',
+                            'success'
+                          )
+                    }
+                })
+            }
+        })
       }
     
   return (
-    <div className='w-1/2 mx-auto'>
+    <div className='lg:w-1/2 sm:w-3/4 px-5 mx-auto'>
         <h1 className='text-accent font-bold text-2xl mx-auto mt-5 text-center'>Add new product</h1>
         <form onSubmit={handleSubmit(addProduct)}>
             <div className='form-control'>

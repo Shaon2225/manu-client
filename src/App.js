@@ -13,6 +13,7 @@ import MyOrders from './component/Dashboard/MyOrders';
 import Allusers from './component/Dashboard/Allusers';
 import RequireAdmin from './component/shared/RequireAdmin';
 import Addproduct from './component/Dashboard/Addproduct';
+import MangeProduct from './component/Dashboard/MangeProduct';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path='myorders' element={<MyOrders></MyOrders>}></Route>
           <Route path='allusers' element={<RequireAdmin><Allusers></Allusers></RequireAdmin>}></Route>
           <Route path='addproduct' element={<RequireAdmin><Addproduct></Addproduct></RequireAdmin>}></Route>
+          <Route path='allproduct' element={<RequireAdmin><MangeProduct></MangeProduct></RequireAdmin>}></Route>
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
