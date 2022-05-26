@@ -107,12 +107,14 @@ const Allusers = () => {
                   >
                     Delete
                   </button>
-                  <button
-                    className="btn btn-xs mx-1"
-                    onClick={() => handleAdmin(user)}
-                  >
-                    Make admin
-                  </button>
+                  {
+                      !(user.role === 'admin')&&<button
+                      className="btn btn-xs mx-1"
+                      onClick={() => handleAdmin(user)}
+                    >
+                      Make admin
+                    </button>
+                  }
                 </td>
               </tr>
             );

@@ -12,6 +12,7 @@ import MyReview from './component/Dashboard/MyReview';
 import MyOrders from './component/Dashboard/MyOrders';
 import Allusers from './component/Dashboard/Allusers';
 import RequireAdmin from './component/shared/RequireAdmin';
+import Addproduct from './component/Dashboard/Addproduct';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path='myreview' element={<MyReview></MyReview>}></Route>
           <Route path='myorders' element={<MyOrders></MyOrders>}></Route>
           <Route path='allusers' element={<RequireAdmin><Allusers></Allusers></RequireAdmin>}></Route>
+          <Route path='addproduct' element={<RequireAdmin><Addproduct></Addproduct></RequireAdmin>}></Route>
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>

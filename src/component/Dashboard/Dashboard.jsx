@@ -18,6 +18,7 @@ const Dashboard = () => {
       <li><Link to={'/dashboard/myreview'} className="text-secondary font-semibold">Review</Link></li>
       <li><Link to={'/dashboard/myorders'} className="text-secondary font-semibold">My Orders</Link></li>
       <li><Link to={'/dashboard/allusers'} className="text-secondary font-semibold">All users</Link></li>
+      <li><Link to={'/dashboard/addproduct'} className="text-secondary font-semibold">Add products</Link></li>
       
     </ul>
   </div>
