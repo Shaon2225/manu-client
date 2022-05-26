@@ -2,7 +2,6 @@ import { async } from "@firebase/util";
 import React, { useEffect, useState } from "react";
 import { useQuery } from "react-query";
 import Swal from "sweetalert2";
-import DltConfirm from "../shared/DltConfirm";
 import Loading from "../shared/Loading";
 
 const Allusers = () => {
@@ -44,16 +43,37 @@ const Allusers = () => {
     });
   };
 
-  const handleAdmin = async (email) => {
+  const handleAdmin = async (user) => {
+      const email = user.email;
     const url1 = `http://localhost:5000/allusers/makeadmin/${email}`;
-    await fetch(url1, {
-      method: "POST",
-      headers: {
-        authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => console.log(data));
+    Swal.fire({
+        title: "Are you sure?",
+        text: `${user?.name?user.name:''} promot to admin`,
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes",
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+            await fetch(url1, {
+                method: "POST",
+                headers: {
+                  authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+                },
+                body:JSON.stringify(user)
+              })
+                .then((res) => res.json())
+                .then((data) =>{
+                    Swal.fire(
+                        'Admin made',
+                        `Email ${user.email}`,
+                        'success'
+                      )
+                } );
+        }
+      });
+   
   };
 
   return (
@@ -73,23 +93,23 @@ const Allusers = () => {
           </tr>
         </thead>
         <tbody>
-          {users?.map((u, index) => {
+          {users?.map((user, index) => {
             return (
-              <tr key={u._id}>
+              <tr key={user._id}>
                 <th className="text-accent text-base">{index + 1}</th>
-                <td className="text-accent text-base">{u.name}</td>
-                <td className="text-accent text-base">{u.email}</td>
-                <td className="text-accent text-base">{u.signUpDate}</td>
+                <td className="text-accent text-base">{user.name}</td>
+                <td className="text-accent text-base">{user.email}</td>
+                <td className="text-accent text-base">{user.signUpDate}</td>
                 <td>
                   <button
                     className="btn btn-xs mx-1"
-                    onClick={() => handleDlt(u.email)}
+                    onClick={() => handleDlt(user.email)}
                   >
                     Delete
                   </button>
                   <button
                     className="btn btn-xs mx-1"
-                    onClick={() => handleAdmin(u.email)}
+                    onClick={() => handleAdmin(user)}
                   >
                     Make admin
                   </button>
