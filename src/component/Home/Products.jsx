@@ -38,7 +38,7 @@ const Products = () => {
               </h2>
               <p className="text-accent">{product.productDetails}</p>
               <div class="card-actions justify-end mt-5">
-                <Link to={'/productsdetails'}><button class="btn btn-primary">Order Now</button></Link>
+                <Link to={`/productdetails/${product._id}`}><button class="btn btn-primary">Order Now</button></Link>
               </div>
             </div>
           </div>

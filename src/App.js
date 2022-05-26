@@ -31,7 +31,7 @@ function App() {
           <Route path='addproduct' element={<RequireAdmin><Addproduct></Addproduct></RequireAdmin>}></Route>
           <Route path='allproduct' element={<RequireAdmin><MangeProduct></MangeProduct></RequireAdmin>}></Route>
         </Route>
-        <Route path='/productdetails' element={<RequireAuth><ProductDetails></ProductDetails></RequireAuth>}></Route>
+        <Route path='/productdetails/:id' element={<RequireAuth><ProductDetails></ProductDetails></RequireAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
       </Routes>
