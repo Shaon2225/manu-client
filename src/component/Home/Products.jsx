@@ -5,9 +5,15 @@ const Products = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allproducts")
+    fetch("https://fathomless-woodland-51722.herokuapp.com/allproducts")
       .then((res) => res.json())
-      .then((data) => setProducts(data));
+      .then((data) => {
+        const min = data.length - 4;
+        const max = data.length - 1;
+        const newPro = data.slice(min, max);
+        console.log(newPro);
+        setProducts(newPro);
+      });
   }, []);
 
   return (
@@ -38,13 +44,14 @@ const Products = () => {
               </h2>
               <p className="text-accent">{product.productDetails}</p>
               <div class="card-actions justify-end mt-5">
-                <Link to={`/productdetails/${product._id}`}><button class="btn btn-primary">Order Now</button></Link>
+                <Link to={`/productdetails/${product._id}`}>
+                  <button class="btn btn-primary">Order Now</button>
+                </Link>
               </div>
             </div>
           </div>
         ))}
       </div>
-      
     </div>
   );
 };

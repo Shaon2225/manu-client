@@ -20,7 +20,7 @@ const ProductDetails = () => {
     const [user]=useAuthState(auth);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/allproducts/${id}`)
+        fetch(`https://fathomless-woodland-51722.herokuapp.com/allproducts/${id}`)
         .then(res=>res.json())
         .then(data=>setProduct(data));
     },[])
@@ -34,16 +34,17 @@ const ProductDetails = () => {
         const minQuantity = parseInt(product.minOrderQuantity);
         const maxQuantity = parseInt(product.productQuantity);
         const productName = product.productName;
+        const price = product.productPrice;
         if(orderedQuantity<minQuantity || orderedQuantity>maxQuantity){
             return (
                 Swal.fire(`Order quantity can't be less thand minimun order quantity or over the avaiable quantity`)
             )
         }
         const order = {
-            productName,email,userName,address,phoneNumber,orderedQuantity,payment:'unpaid'
+            price,productName,email,userName,address,phoneNumber,orderedQuantity,payment:'unpaid'
         }
         console.log(order);
-     fetch(`http://localhost:5000/allproducts/palceorder`,{
+     fetch(`https://fathomless-woodland-51722.herokuapp.com/allproducts/palceorder`,{
          method:"POST",
          headers:{
             'content-type': 'application/json',

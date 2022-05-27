@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 import auth from "../../firebase.init";
 
 const MyOrders = () => {
   const [user] = useAuthState(auth);
-  const userUrl = `http://localhost:5000/allorders/${user.email}`;
+  const userUrl = `https://fathomless-woodland-51722.herokuapp.com/allorders/${user.email}`;
   const {
     data: orders,
     isLoading,
@@ -19,7 +20,7 @@ const MyOrders = () => {
   }).then((res) => res.json()));
 
   const handleDltOrder = (id) => {
-    const url = `http://localhost:5000/allorders/dlt/${id}`;
+    const url = `https://fathomless-woodland-51722.herokuapp.com/allorders/dlt/${id}`;
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this product!",
@@ -75,7 +76,7 @@ const MyOrders = () => {
                 {(order.payment == "unpaid") ? (
                   <>
                   <button className="btn btn-xs mx-1">Unpaid</button>
-                  <button className="btn btn-xs mx-1"> Make payment</button>
+                  <Link to={`/dashboard/payment/${order._id}`}><button className="btn btn-xs mx-1"> Make payment</button></Link>
                   </>
                 ) : (
                   <button className="btn btn-xs mx-1">Paid</button>

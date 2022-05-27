@@ -33,7 +33,7 @@ const Addproduct = () => {
             minOrderQuantity: data.minOrderQuantity,
             productImg: img,
           };
-          fetch("http://localhost:5000/addproduct", {
+          fetch("https://fathomless-woodland-51722.herokuapp.com/addproduct", {
             method: "POST",
             headers: {
               "content-type": "application/json",

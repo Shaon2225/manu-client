@@ -5,7 +5,7 @@ import Loading from '../shared/Loading';
 
 const MangeProduct = () => {
 
-    const productUrl= `http://localhost:5000/allproducts`;
+    const productUrl= `https://fathomless-woodland-51722.herokuapp.com/allproducts`;
     const {
         data: products,
         isLoading,
@@ -17,7 +17,7 @@ const MangeProduct = () => {
       }
 
       const handleDltProduct = async (id)=>{
-        const url1 = `http://localhost:5000/allproducts/dlt/${id}`;
+        const url1 = `https://fathomless-woodland-51722.herokuapp.com/allproducts/dlt/${id}`;
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this product!",

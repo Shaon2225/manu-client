@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import Loading from "../shared/Loading";
 
 const Allusers = () => {
-  const userUrl = `http://localhost:5000/allusers`;
+  const userUrl = `https://fathomless-woodland-51722.herokuapp.com/allusers`;
   const {
     data: users,
     isLoading,
@@ -17,7 +17,7 @@ const Allusers = () => {
   }
 
   const handleDlt = async (email) => {
-    const url1 = `http://localhost:5000/allusers/dlt/${email}`;
+    const url1 = `https://fathomless-woodland-51722.herokuapp.com/allusers/dlt/${email}`;
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this user!",
@@ -45,7 +45,7 @@ const Allusers = () => {
 
   const handleAdmin = async (user) => {
       const email = user.email;
-    const url1 = `http://localhost:5000/allusers/makeadmin/${email}`;
+    const url1 = `https://fathomless-woodland-51722.herokuapp.com/allusers/makeadmin/${email}`;
     Swal.fire({
         title: "Are you sure?",
         text: `${user?.name?user.name:''} promot to admin`,
