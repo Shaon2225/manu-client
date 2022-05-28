@@ -15,7 +15,6 @@ const Review = () => {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             }
       }).then((res) => res.json()));
-
   return (
     <div>
       <div className="mx-auto flex justify-center">
@@ -23,9 +22,9 @@ const Review = () => {
           Our Satisfied Customers
         </h1>
       </div>
-              <div>
+              <div className="grid lg:grid-cols-3 sm:grid-cols-1 mx-auto justify-items-center	text-neutral my-10">
                 {
-                  reviews?.map(review=><ReviewCard review={review}></ReviewCard>)
+                  reviews?.map(review=><ReviewCard review1={review}></ReviewCard>)
                 }
               </div>
           

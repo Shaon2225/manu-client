@@ -28,10 +28,12 @@ const MyReview = () => {
     };
     const url = `https://fathomless-woodland-51722.herokuapp.com/addreview`;
     await fetch(url, {
-      method: 'PUT',
+      method: 'POST',
         headers: {
+          "content-type": "application/json",
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`
-        }
+        },
+        body: JSON.stringify(userReview)
     })
     .then(res=>res.json())
     .then(result=>{
