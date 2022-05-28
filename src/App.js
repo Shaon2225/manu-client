@@ -18,6 +18,7 @@ import ProductDetails from './component/Home/ProductDetails';
 import Payment from './component/Dashboard/Payment';
 import NotFound from './component/NotFound';
 import Blog from './component/Blogs/Blog';
+import Portfolio from './component/Blogs/Portfolio';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blog></Blog>}></Route>
+        <Route path='/portfolio' element={<Portfolio></Portfolio>}></Route>
         <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<UserProfile></UserProfile>}></Route>
           <Route path='myreview' element={<MyReview></MyReview>}></Route>

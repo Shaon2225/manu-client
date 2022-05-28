@@ -32,6 +32,7 @@ const Navbar = () => {
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black rounded-box w-52"
           >
             <li className="font-semibold text-success"><Link to={'/blogs'}>Blog</Link></li>
+            <li className="font-semibold text-success"><Link to={'/portfolio'}>Portfolio</Link></li>
             <li>
             {user && <Link to={'/dashboard'} className="font-semibold text-success">Dashborad</Link>}
           </li>
@@ -51,6 +52,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal p-0">
           <li className="font-semibold text-success  ml-5"><Link to={'/'}>Home</Link></li>
           <li className="font-semibold text-success"><Link to={'/blogs'}>Blog</Link></li>
+          <li className="font-semibold text-success"><Link to={'/portfolio'}>Portfolio</Link></li>
           <li>
             {user && <Link to={'/dashboard'} className="font-semibold text-success  ml-5">Dashborad</Link>}
           </li>
