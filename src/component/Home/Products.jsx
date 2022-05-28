@@ -11,7 +11,6 @@ const Products = () => {
         const min = data.length - 4;
         const max = data.length - 1;
         const newPro = data.slice(min, max);
-        console.log(newPro);
         setProducts(newPro);
       });
   }, []);
