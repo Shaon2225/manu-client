@@ -69,17 +69,17 @@ const UserProfile = () => {
   return (
     <div className="mx-auto mt-5 w-3/4 flex justify-around">
       <div>
-        <h1 className="text-accent text-3xl">
+        <h1 className="text-neutral text-3xl">
           Hello <b>{user.displayName}</b>
         </h1>
-        <h1 className="text-accent text-xl">
+        <h1 className="text-neutral text-xl">
           <b>Email : </b>
           {user.email}
         </h1>
         <div>
           <p
             onClick={() => setEditAble(true)}
-            className="text-accent text-l font-bold border-2 border-accent rounded-lg px-3 py-1 my-2 cursor-pointer w-1/2"
+            className="text-neutral text-l font-bold border-2 border-accent rounded-lg px-3 py-1 my-2 cursor-pointer w-1/2"
           >
             Edit profile{" "}
             <button className="">
@@ -88,44 +88,44 @@ const UserProfile = () => {
           </p>
         </div>
         <div className="my-5">
-          <b className="text-accent mt-10">User details:</b>
+          <b className="text-neutral mt-10">User details:</b>
           {editAble ? (
             <form onSubmit={handleSubmit(handleUpdate)}>
               <div className="form-control">
-                <label className="label text-accent font-semibold">
+                <label className="label text-neutral font-semibold">
                   Your University
                 </label>
                 <input
                   type="text"
                   placeholder="University/school/college"
-                  className="py-2 border border-accent rounded-lg w-full px-3 text-accent"
+                  className="py-2 border border-accent rounded-lg w-full px-3 text-neutral"
                   {...register("education")}
                 />
-                <label className="label text-accent font-semibold">
+                <label className="label text-neutral font-semibold">
                   Your Socialmedia link
                 </label>
                 <input
                   type="text"
                   placeholder="Socialmedia link"
-                  className="py-2 border border-accent rounded-lg w-full px-3 text-accent"
+                  className="py-2 border border-accent rounded-lg w-full px-3 text-neutral"
                   {...register("social")}
                 />
-                <label className="label text-accent font-semibold">
+                <label className="label text-neutral font-semibold">
                   Your phone number
                 </label>
                 <input
                   type="number"
                   placeholder="phone number"
-                  className="py-2 border border-accent rounded-lg w-full px-3 text-accent"
+                  className="py-2 border border-accent rounded-lg w-full px-3 text-neutral"
                   {...register("phoneNumber")}
                 />
-                <label className="label text-accent font-semibold">
+                <label className="label text-neutral font-semibold">
                   Your Address
                 </label>
                 <textarea
                   type="text"
                   placeholder="Address"
-                  className="py-2 border border-accent rounded-lg w-full px-3 text-accent"
+                  className="py-2 border border-accent rounded-lg w-full px-3 text-neutral"
                   {...register("address")}
                 />
                 <input
@@ -138,19 +138,19 @@ const UserProfile = () => {
             </form>
           ) : (
             <div className="mt-5 ml-5">
-              <h1 className="text-accent text-base">
+              <h1 className="text-neutral text-base">
                 <b>Education : </b>
                 {userProfile?.education}
               </h1>
-              <h1 className="text-accent text-base">
+              <h1 className="text-neutral text-base">
                 <b>Phone no : </b>
                 {userProfile?.phoneNumber}
               </h1>
-              <h1 className="text-accent text-base">
+              <h1 className="text-neutral text-base">
                 <b>Social link : </b>
                 {userProfile?.social}
               </h1>
-              <h1 className="text-accent text-base">
+              <h1 className="text-neutral text-base">
                 <b>Address : </b>
                 {userProfile?.address}
               </h1>
@@ -168,7 +168,7 @@ const UserProfile = () => {
         </div>
       ) : (
         <div class="avatar placeholder">
-          <div class="bg-primary-focus text-accent-content rounded-full w-24 h-24">
+          <div class="bg-primary-focus text-neutral-content rounded-full w-24 h-24">
             <span class="text-3xl">{user?.displayName?.split("")[0].toUpperCase()}</span>
           </div>
         </div>

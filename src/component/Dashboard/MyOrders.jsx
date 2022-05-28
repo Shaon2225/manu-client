@@ -49,7 +49,7 @@ const MyOrders = () => {
   
   return (
     <div>
-      <h1 className="text-accent text-lg font-bold text-center my-5">
+      <h1 className="text-neutral text-lg font-bold text-center my-5">
         {" "}
         Total number of order : {orders?.length}
       </h1>
@@ -67,12 +67,12 @@ const MyOrders = () => {
           <tbody>
             {orders?.map((order, index) => {
               return <tr key={order._id}>
-              <th className="text-accent text-base">{index + 1}</th>
-              <td className="text-accent text-base">{order?.productName}</td>
-              <td className="text-accent text-base">
+              <th className="text-neutral text-base">{index + 1}</th>
+              <td className="text-neutral text-base">{order?.productName}</td>
+              <td className="text-neutral text-base">
                 {order?.orderedQuantity}
               </td>
-              <td className="text-accent text-base">
+              <td className="text-neutral text-base">
                 {(order.payment == "unpaid") ? (
                   <>
                   <button className="btn btn-xs mx-1">Unpaid</button>

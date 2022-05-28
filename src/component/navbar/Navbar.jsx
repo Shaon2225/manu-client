@@ -31,26 +31,34 @@ const Navbar = () => {
             tabIndex="0"
             className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black rounded-box w-52"
           >
+            <li className="font-semibold text-success"><Link to={'/blogs'}>Blog</Link></li>
             <li>
-            <Link to={'/login'} className="font-semibold text-success">Log in</Link>
-          </li>
-          <li>
-            <Link to={'/signup'} className="font-semibold text-success">Sign Up</Link>
-          </li>
-          </ul>
-        </div>
-        <Link to={'/'} className="ml-5 normal-case text-xl"><img src="img/voltlab_lab_logo.png" alt="" /></Link>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal p-0">
-          <li>
-            {user && <Link to={'/dashboard'} className="font-semibold text-success ">Dashborad</Link>}
+            {user && <Link to={'/dashboard'} className="font-semibold text-success">Dashborad</Link>}
           </li>
           <li>
             {!user && <Link to={'/login'} className="font-semibold text-success ">Log in</Link>}
           </li>
           <li>
-            {user?<span className="font-semibold text-secondary" onClick={()=>signOut(auth)}>Sign Out</span>:<Link to={'/signup'} className="font-semibold text-success">Sign Up</Link>}
+            {user?<span className="font-semibold text-success" onClick={()=>signOut(auth)}>Sign Out</span>:<Link to={'/signup'} className="font-semibold text-success">Sign Up</Link>}
+          </li>
+          </ul>
+        </div>
+        <Link to={'/'} className="ml-5"><img className="lg:block" src="https://i.ibb.co/BfvPVXL/voltlab-lab-logo.png" alt="" /></Link>
+      </div>
+      
+      <div className="navbar-center hidden lg:flex justify-end pr-10 w-full">
+        
+        <ul className="menu menu-horizontal p-0">
+          <li className="font-semibold text-success  ml-5"><Link to={'/'}>Home</Link></li>
+          <li className="font-semibold text-success"><Link to={'/blogs'}>Blog</Link></li>
+          <li>
+            {user && <Link to={'/dashboard'} className="font-semibold text-success  ml-5">Dashborad</Link>}
+          </li>
+          <li>
+            {!user && <Link to={'/login'} className="font-semibold text-success  ml-5">Log in</Link>}
+          </li>
+          <li>
+            {user?<span className="font-semibold text-success ml-5" onClick={()=>signOut(auth)}>Sign Out</span>:<Link to={'/signup'} className="font-semibold text-success ml-5">Sign Up</Link>}
           </li>
         </ul>
       </div>

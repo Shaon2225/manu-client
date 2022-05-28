@@ -45,7 +45,7 @@ const MangeProduct = () => {
 
   return (
     <div>
-    <h1 className="text-accent text-lg font-bold text-center my-5">
+    <h1 className="text-neutral text-lg font-bold text-center my-5">
       {" "}
       Total number of Product : {products?.length}
     </h1>
@@ -64,10 +64,10 @@ const MangeProduct = () => {
         {products?.map((product, index) => {
           return (
             <tr key={product._id}>
-              <th className="text-accent text-base">{index + 1}</th>
-              <td className="text-accent text-base">{product?.productName}</td>
-              <td className="text-accent text-base">{product?.productPrice}</td>
-              <td className="text-accent text-base">{product?.productQuantity}</td>
+              <th className="text-neutral text-base">{index + 1}</th>
+              <td className="text-neutral text-base">{product?.productName}</td>
+              <td className="text-neutral text-base">{product?.productPrice}</td>
+              <td className="text-neutral text-base">{product?.productQuantity}</td>
               <td>
                 <button
                   className="btn btn-xs mx-1"

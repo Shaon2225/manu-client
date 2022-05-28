@@ -33,7 +33,7 @@ const Payment = () => {
     <div className="mx-auto flex flex-col justify-center items-center w-3/4">
       <div class="card w-full max-w-md bg-base-100 shadow-xl my-12">
         <div class="card-body">
-          <p className="text-accent font-bold">
+          <p className="text-neutral font-bold">
             <b>Name : </b> {order?.userName}
           </p>
           <h2 class="card-title">Please Pay for {}</h2>

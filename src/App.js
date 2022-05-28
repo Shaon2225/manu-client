@@ -16,6 +16,8 @@ import Addproduct from './component/Dashboard/Addproduct';
 import MangeProduct from './component/Dashboard/MangeProduct';
 import ProductDetails from './component/Home/ProductDetails';
 import Payment from './component/Dashboard/Payment';
+import NotFound from './component/NotFound';
+import Blog from './component/Blogs/Blog';
 
 
 function App() {
@@ -24,6 +26,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/blogs' element={<Blog></Blog>}></Route>
         <Route path='dashboard' element={<RequireAuth><Dashboard></Dashboard></RequireAuth>}>
           <Route index element={<UserProfile></UserProfile>}></Route>
           <Route path='myreview' element={<MyReview></MyReview>}></Route>
@@ -36,6 +39,7 @@ function App() {
         <Route path='/productdetails/:id' element={<RequireAuth><ProductDetails></ProductDetails></RequireAuth>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<Signup></Signup>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
     </div>
   );

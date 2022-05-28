@@ -54,63 +54,63 @@ const Addproduct = () => {
 
   return (
     <div className="lg:w-1/2 sm:w-3/4 px-5 mx-auto">
-      <h1 className="text-accent font-bold text-2xl mx-auto mt-5 text-center">
+      <h1 className="text-neutral font-bold text-2xl mx-auto mt-5 text-center">
         Add new product
       </h1>
       <form onSubmit={handleSubmit(addProduct)}>
         <div className="form-control">
-          <label className="label text-accent font-semibold">
+          <label className="label text-neutral font-semibold">
             Product Name
           </label>
           <input
             type="text"
             placeholder="Product Name"
-            className="py-2 px-3 border border-accent rounded-lg w-full text-accent"
+            className="py-2 px-3 border border-accent rounded-lg w-full text-neutral"
             {...register("productName")}
           />
-          <label className="label text-accent font-semibold">
+          <label className="label text-neutral font-semibold">
             Product Details
           </label>
           <textarea
             type="text"
             placeholder="Product details"
-            className="py-2 px-3 border border-accent rounded-lg w-full text-accent"
+            className="py-2 px-3 border border-accent rounded-lg w-full text-neutral"
             {...register("productDetails")}
           />
-          <label className="label text-accent font-semibold">
+          <label className="label text-neutral font-semibold">
             Product Price
           </label>
           <input
             type="number"
             placeholder="Product Price"
-            className="py-2 px-3 border border-accent rounded-lg w-full text-accent"
+            className="py-2 px-3 border border-accent rounded-lg w-full text-neutral"
             {...register("productPrice")}
           />
-          <label className="label text-accent font-semibold">
+          <label className="label text-neutral font-semibold">
             Avaible quantity
           </label>
           <input
             type="number"
             placeholder="Avaivble quantity"
-            className="py-2 px-3 border border-accent rounded-lg w-full text-accent"
+            className="py-2 px-3 border border-accent rounded-lg w-full text-neutral"
             {...register("productQuantity")}
           />
-          <label className="label text-accent font-semibold">
+          <label className="label text-neutral font-semibold">
             Minimum order quantity
           </label>
           <input
             type="number"
             placeholder="Minimum order quantity"
-            className="py-2 px-3 border border-accent rounded-lg w-full text-accent"
+            className="py-2 px-3 border border-accent rounded-lg w-full text-neutral"
             {...register("minOrderQuantity")}
           />
-          <label className="label text-accent font-semibold">
+          <label className="label text-neutral font-semibold">
             Product Image
           </label>
           <input
             type="file"
             placeholder="Product Image"
-            className="py-2 px-3 border border-accent rounded-lg w-full text-accent"
+            className="py-2 px-3 border border-accent rounded-lg w-full text-neutral"
             {...register("productImg")}
           />
           <input

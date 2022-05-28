@@ -17,7 +17,7 @@ const Products = () => {
 
   return (
     <div>
-      <h1 className="text-accent text-center text-4xl font-bold my-10">
+      <h1 className="text-neutral text-center text-4xl font-bold my-10">
         Our products
       </h1>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 mt-10 justify-items-center">
@@ -30,18 +30,18 @@ const Products = () => {
               <img src={product.productImg} alt={product.productName} />
             </figure>
             <div class="card-body">
-              <h2 class="card-title text-accent">{product.productName}</h2>
-              <h2 class="text-accent font-base">
+              <h2 class="card-title text-neutral">{product.productName}</h2>
+              <h2 class="text-neutral font-base">
                 <b>Price :</b> <span className="text-xl">&#2547;</span>{" "}
                 {product.productPrice}
               </h2>
-              <h2 class="text-accent font-base">
+              <h2 class="text-neutral font-base">
                 <b>Avaiable :</b> {product.productQuantity} pis
               </h2>
-              <h2 class="text-accent font-base">
+              <h2 class="text-neutral font-base">
                 <b>Minimum order quantity :</b> {product.minOrderQuantity} pis
               </h2>
-              <p className="text-accent">{product.productDetails}</p>
+              <p className="text-neutral">{product.productDetails}</p>
               <div class="card-actions justify-end mt-5">
                 <Link to={`/productdetails/${product._id}`}>
                   <button class="btn btn-primary">Order Now</button>

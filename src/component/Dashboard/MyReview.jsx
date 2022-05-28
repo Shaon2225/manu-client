@@ -46,29 +46,29 @@ const MyReview = () => {
   return (
     <div className="mx-auto mt-5 w-3/4 flex justify-around">
       <div className="w-3/4">
-        <h1 className="text-3xl text-accent text-center font-bold">
+        <h1 className="text-3xl text-neutral text-center font-bold">
           Add review
         </h1>
         <form onSubmit={handleSubmit(addReview)}>
           <div className="">
-            <label className="label text-accent font-semibold">Email</label>
+            <label className="label text-neutral font-semibold">Email</label>
             <input
               type="text"
               placeholder="Product Name"
-              className="py-2 px-3 border border-accent rounded-lg w-full text-accent"
+              className="py-2 px-3 border border-accent rounded-lg w-full text-neutral"
               value={user.email}
               readOnly
             />
-            <label className="label text-accent font-semibold">Your Name</label>
+            <label className="label text-neutral font-semibold">Your Name</label>
             <input
               type="text"
               placeholder="Product Name"
-              className="py-2 px-3 border border-accent rounded-lg w-full text-accent"
+              className="py-2 px-3 border border-accent rounded-lg w-full text-neutral"
               value={user?.displayName}
               readOnly={user.displayName}
               {...register("userName")}
             />
-            <label className="label text-accent font-semibold">Rating</label>
+            <label className="label text-neutral font-semibold">Rating</label>
             <div class="rating rating-md">
               <input
                 type="radio"
@@ -107,13 +107,13 @@ const MyReview = () => {
               />
             </div>
 
-            <label className="label text-accent font-semibold">
+            <label className="label text-neutral font-semibold">
               Your Review
             </label>
             <textarea
               type="text"
               placeholder="Your Review"
-              className="py-2 px-3 border border-accent rounded-lg w-full text-accent"
+              className="py-2 px-3 border border-accent rounded-lg w-full text-neutral"
               {...register("review")}
             />
             <input
