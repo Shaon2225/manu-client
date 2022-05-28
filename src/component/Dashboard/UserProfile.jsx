@@ -79,12 +79,10 @@ const UserProfile = () => {
         <div>
           <p
             onClick={() => setEditAble(true)}
-            className="text-neutral text-l font-bold border-2 border-accent rounded-lg px-3 py-1 my-2 cursor-pointer w-1/2"
+            className="text-neutral text-l font-bold border-2 border-accent rounded-lg px-3 py-1 my-2 cursor-pointer w-3/4"
           >
             Edit profile{" "}
-            <button className="">
               <BiEdit></BiEdit>
-            </button>
           </p>
         </div>
         <div className="my-5">
@@ -161,15 +159,15 @@ const UserProfile = () => {
 
       {/* ============================= photo user ===========================================*/}
       {user?.photoURL ? (
-        <div class="avatar">
-          <div class="w-24 h-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+        <div className="avatar">
+          <div className="w-24 h-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
             <img src={user.photoURL} />
           </div>
         </div>
       ) : (
-        <div class="avatar placeholder">
-          <div class="bg-primary-focus text-neutral-content rounded-full w-24 h-24">
-            <span class="text-3xl">{user?.displayName?.split("")[0].toUpperCase()}</span>
+        <div className="avatar placeholder">
+          <div className="bg-primary-focus text-neutral-content rounded-full w-24 h-24">
+            <span className="text-3xl">{user?.displayName?.split("")[0].toUpperCase()}</span>
           </div>
         </div>
       )}

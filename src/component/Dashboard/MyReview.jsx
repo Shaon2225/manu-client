@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { useQuery } from "react-query";
 import Swal from "sweetalert2";
 import auth from "../../firebase.init";
+import ReviewCard from "../Home/ReviewCard";
 
 const MyReview = () => {
   const [user] = useAuthState(auth);
@@ -43,8 +45,24 @@ const MyReview = () => {
     })
   };
 
+  const reviewUrl1 =`https://fathomless-woodland-51722.herokuapp.com/product-review/${user.email}`;
+    const {
+        data: reviews1,
+        isLoading,
+        refetch,
+      } = useQuery(["userProfile"], () => fetch(reviewUrl1,{
+        method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+      }).then((res) => res.json()));
   return (
     <div className="mx-auto mt-5 w-3/4 flex justify-around">
+      <div className="grid lg:grid-cols-2 sm:grid-cols-1 mr-10">
+        {
+          reviews1?.map(review=><ReviewCard review1={review} key={review._id}></ReviewCard>)
+        }
+      </div>
       <div className="w-3/4">
         <h1 className="text-3xl text-neutral text-center font-bold">
           Add review
@@ -69,39 +87,39 @@ const MyReview = () => {
               {...register("userName")}
             />
             <label className="label text-neutral font-semibold">Rating</label>
-            <div class="rating rating-md">
+            <div className="rating rating-md">
               <input
                 type="radio"
                 name="rating-7"
-                class="mask mask-star-2 bg-orange-400"
+                className="mask mask-star-2 bg-orange-400"
                 checked ={star == 1}
                 onChange={()=>setStar(1)}
               />
               <input
                 type="radio"
                 name="rating-7"
-                class="mask mask-star-2 bg-orange-400"
+                className="mask mask-star-2 bg-orange-400"
                 onChange={()=>setStar(2)}
                 checked ={star == 2}
               />
               <input
                 type="radio"
                 name="rating-7"
-                class="mask mask-star-2 bg-orange-400"
+                className="mask mask-star-2 bg-orange-400"
                 onChange={()=>setStar(3)}
                 checked ={star == 3}
               />
               <input
                 type="radio"
                 name="rating-7"
-                class="mask mask-star-2 bg-orange-400"
+                className="mask mask-star-2 bg-orange-400"
                 onChange={()=>setStar(4)}
                 checked ={star == 4}
               />
               <input
                 type="radio"
                 name="rating-7"
-                class="mask mask-star-2 bg-orange-400"
+                className="mask mask-star-2 bg-orange-400"
                 onChange={()=>setStar(5)}
                 checked ={star == 5}
               />

@@ -43,7 +43,6 @@ const ProductDetails = () => {
         const order = {
             price,productName,email,userName,address,phoneNumber,orderedQuantity,payment:'unpaid'
         }
-        console.log(order);
      fetch(`https://fathomless-woodland-51722.herokuapp.com/allproducts/palceorder`,{
          method:"POST",
          headers:{
@@ -71,10 +70,10 @@ const ProductDetails = () => {
             <h1 className='text-3xl text-neutral text-center font-bold'>{product.productName}</h1>
             <h1 className='text-xl mt-3 text-neutral font-bold'><b>Price </b><span className="text-xl">&#2547;</span>{" "}
                 {product.productPrice}</h1>
-            <h2 class="text-neutral font-base">
+            <h2 className="text-neutral font-base">
                 <b>Avaiable :</b> {product.productQuantity} pis
             </h2>
-            <h2 class="text-neutral font-base">
+            <h2 className="text-neutral font-base">
                 <b>Minimum order quantity :</b> {product.minOrderQuantity} pis
               </h2>
             <p className='text-neutral'><b>Details : </b>{product.productDetails}</p>

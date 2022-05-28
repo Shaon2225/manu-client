@@ -53,8 +53,8 @@ const MyOrders = () => {
         {" "}
         Total number of order : {orders?.length}
       </h1>
-      <div class="overflow-x-auto">
-        <table class="table w-3/4 flex justify-center items-center mx-auto">
+      <div className="overflow-x-auto">
+        <table className="table w-3/4 flex justify-center items-center mx-auto">
           <thead>
             <tr>
               <th></th>
@@ -76,7 +76,7 @@ const MyOrders = () => {
                 {(order.payment == "unpaid") ? (
                   <>
                   <button className="btn btn-xs mx-1">Unpaid</button>
-                  <Link to={`/dashboard/payment/${order._id}`}><button className="btn btn-xs mx-1"> Make payment</button></Link>
+                  <Link to={``}><button className="btn btn-xs mx-1"> Make payment</button></Link>
                   </>
                 ) : (
                   <button className="btn btn-xs mx-1">Paid</button>

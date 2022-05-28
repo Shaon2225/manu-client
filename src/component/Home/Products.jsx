@@ -24,27 +24,27 @@ const Products = () => {
         {products?.map((product) => (
           <div
             key={product._id}
-            class="card card-compact w-96 bg-base-100 shadow-xl sm:mt-10"
+            className="card card-compact w-96 bg-base-100 shadow-xl sm:mt-10"
           >
             <figure>
               <img src={product.productImg} alt={product.productName} />
             </figure>
-            <div class="card-body">
-              <h2 class="card-title text-neutral">{product.productName}</h2>
-              <h2 class="text-neutral font-base">
+            <div className="card-body">
+              <h2 className="card-title text-neutral">{product.productName}</h2>
+              <h2 className="text-neutral font-base">
                 <b>Price :</b> <span className="text-xl">&#2547;</span>{" "}
                 {product.productPrice}
               </h2>
-              <h2 class="text-neutral font-base">
+              <h2 className="text-neutral font-base">
                 <b>Avaiable :</b> {product.productQuantity} pis
               </h2>
-              <h2 class="text-neutral font-base">
+              <h2 className="text-neutral font-base">
                 <b>Minimum order quantity :</b> {product.minOrderQuantity} pis
               </h2>
               <p className="text-neutral">{product.productDetails}</p>
-              <div class="card-actions justify-end mt-5">
+              <div className="card-actions justify-end mt-5">
                 <Link to={`/productdetails/${product._id}`}>
-                  <button class="btn btn-primary">Order Now</button>
+                  <button className="btn btn-primary">Order Now</button>
                 </Link>
               </div>
             </div>

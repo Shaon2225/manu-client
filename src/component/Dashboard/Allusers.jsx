@@ -79,8 +79,8 @@ const Allusers = () => {
         {" "}
         Total number of user : {users?.length}
       </h1>
-      <div class="overflow-x-auto">
-        <table class="table w-3/4 flex justify-center items-center mx-auto">
+      <div className="overflow-x-auto">
+        <table className="table w-3/4 flex justify-center items-center mx-auto">
           <thead>
             <tr>
               <th></th>

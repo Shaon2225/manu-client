@@ -31,12 +31,12 @@ const Payment = () => {
 
   return (
     <div className="mx-auto flex flex-col justify-center items-center w-3/4">
-      <div class="card w-full max-w-md bg-base-100 shadow-xl my-12">
-        <div class="card-body">
+      <div className="card w-full max-w-md bg-base-100 shadow-xl my-12">
+        <div className="card-body">
           <p className="text-neutral font-bold">
             <b>Name : </b> {order?.userName}
           </p>
-          <h2 class="card-title">Please Pay for {}</h2>
+          <h2 className="card-title">Please Pay for {}</h2>
           <p>
             Product Name:{" "}
             <span className="text-orange-700">{order?.productName}</span>
@@ -44,8 +44,8 @@ const Payment = () => {
           <p>Please pay: ${order?.orderedQuantity} x ${order?.price} = ${order?.orderedQuantity*order?.price}</p>
         </div>
       </div>
-      <div class="card w-full max-w-md shadow-2xl bg-base-100">
-        <div class="card-body">
+      <div className="card w-full max-w-md shadow-2xl bg-base-100">
+        <div className="card-body">
           <Elements stripe={stripePromise}>
             <CheckOut order={order} cost={order?.orderedQuantity*order?.price} />
           </Elements>

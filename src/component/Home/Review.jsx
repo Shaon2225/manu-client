@@ -24,7 +24,7 @@ const Review = () => {
       </div>
               <div className="grid lg:grid-cols-3 sm:grid-cols-1 mx-auto justify-items-center	text-neutral my-10">
                 {
-                  reviews?.map(review=><ReviewCard review1={review}></ReviewCard>)
+                  reviews?.map(review=><ReviewCard review1={review} key={review._id}></ReviewCard>)
                 }
               </div>
           

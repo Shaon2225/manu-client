@@ -52,7 +52,7 @@ const Signup = () => {
                 type="text"
                 placeholder="Name"
                 className="input-border w-full px-3 py-2 text-secondary"
-                {...register("email", {
+                {...register("name", {
                   required: {
                     value: true,
                     message: "Required",
@@ -117,7 +117,7 @@ const Signup = () => {
             </div>
             <p className="mb-3"><small className="text-secondary font-bold">{signInError}</small></p>
             <p className='text-secondary font-medium my-2 text-base	'>Already have an account <Link to={'/login'} className="font-bold"> Log in</Link></p>
-            <input type="submit" value="Log in" className="btn w-full max-w-xs text-secondary font-bold" />
+            <input type="submit" value="Sign up" className="btn w-full max-w-xs text-secondary font-bold" />
           </form>
           <div className="divider text-secondary">OR</div>
           <button className="btn w-full max-w-xs text-secondary font-bold" onClick={()=>signInWithGoogle()}>
